@@ -12,5 +12,10 @@ public class SecurityConstants {
             "/**, OPTIONS",
             "/api/auth/token, POST",
     };
+    public static final String[] EXCLUDE_FROM_REQUEST_RESPONSE_LOGGER = new String[] {
+            "/**, OPTIONS",
+            "/api/auth/token, POST",
+            "/api/users, POST",
+    };
 
 }
