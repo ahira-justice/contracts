@@ -19,3 +19,12 @@ server:
   error:
     whitelabel:
       enabled: false
+
+app:
+  config:
+    superuser:
+      username: ${env.SUPERUSER_USERNAME}
+      email: ${env.SUPERUSER_EMAIL}
+      first-name: ${env.SUPERUSER_FIRST_NAME}
+      last-name: ${env.SUPERUSER_LAST_NAME}
+      password: ${env.SUPERUSER_PASSWORD}
