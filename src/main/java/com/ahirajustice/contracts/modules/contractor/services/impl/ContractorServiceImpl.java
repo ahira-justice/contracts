@@ -4,6 +4,7 @@ import com.ahirajustice.contracts.common.constants.RoleConstants;
 import com.ahirajustice.contracts.common.entities.Account;
 import com.ahirajustice.contracts.common.entities.Contractor;
 import com.ahirajustice.contracts.common.entities.User;
+import com.ahirajustice.contracts.common.exceptions.NotFoundException;
 import com.ahirajustice.contracts.common.repositories.ContractorRepository;
 import com.ahirajustice.contracts.modules.account.requests.CreateAccountRequest;
 import com.ahirajustice.contracts.modules.account.services.AccountService;
@@ -65,6 +66,16 @@ public class ContractorServiceImpl implements ContractorService {
                 .user(user)
                 .account(account)
                 .build();
+    }
+
+    @Override
+    public Contractor validateContractor(String username){
+        Contractor contractor = contractorRepository.findByUsername(username).orElse(null);
+
+        if (contractor == null)
+            throw new NotFoundException(String.format("Contractor with username: %s does not exist", username));
+
+        return contractor;
     }
 
 }

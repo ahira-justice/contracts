@@ -6,5 +6,6 @@
     <include file="/db/changelog/002_add_accounts_table.xml"/>
     <include file="/db/changelog/003_add_clients_table.xml"/>
     <include file="/db/changelog/004_add_contractors_table.xml"/>
+    <include file="/db/changelog/005_add_contracts_table.xml"/>
 
 </databaseChangeLog>

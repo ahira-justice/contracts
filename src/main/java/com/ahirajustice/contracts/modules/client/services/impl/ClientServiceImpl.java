@@ -4,6 +4,7 @@ import com.ahirajustice.contracts.common.constants.RoleConstants;
 import com.ahirajustice.contracts.common.entities.Account;
 import com.ahirajustice.contracts.common.entities.Client;
 import com.ahirajustice.contracts.common.entities.User;
+import com.ahirajustice.contracts.common.exceptions.NotFoundException;
 import com.ahirajustice.contracts.common.repositories.ClientRepository;
 import com.ahirajustice.contracts.modules.account.requests.CreateAccountRequest;
 import com.ahirajustice.contracts.modules.account.services.AccountService;
@@ -65,6 +66,16 @@ public class ClientServiceImpl implements ClientService {
                 .user(user)
                 .account(account)
                 .build();
+    }
+
+    @Override
+    public Client validateClient(String username){
+        Client client = clientRepository.findByUsername(username).orElse(null);
+
+        if (client == null)
+            throw new NotFoundException(String.format("Client with username: %s does not exist", username));
+
+        return client;
     }
 
 }
