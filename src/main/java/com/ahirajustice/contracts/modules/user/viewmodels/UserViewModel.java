@@ -20,6 +20,7 @@ public class UserViewModel extends BaseViewModel {
     private String email;
     private String firstName;
     private String lastName;
+    private String role;
 
     public static UserViewModel from(User user) {
         UserViewModel response = new UserViewModel();
