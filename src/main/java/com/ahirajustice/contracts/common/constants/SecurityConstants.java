@@ -11,11 +11,14 @@ public class SecurityConstants {
     public static final String[] EXCLUDE_FROM_AUTH_URLS = new String[] {
             "/**, OPTIONS",
             "/api/auth/token, POST",
+            "/api/contractors, POST",
+            "/api/clients, POST",
     };
     public static final String[] EXCLUDE_FROM_REQUEST_RESPONSE_LOGGER = new String[] {
             "/**, OPTIONS",
             "/api/auth/token, POST",
-            "/api/users, POST",
+            "/api/contractors, POST",
+            "/api/clients, POST",
     };
 
 }
