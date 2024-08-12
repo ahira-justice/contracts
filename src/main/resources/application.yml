@@ -22,6 +22,9 @@ server:
 
 app:
   config:
+    account:
+      account-number:
+        length: ${env.ACCOUNT_NUMBER_LENGTH}
     access-token-expire-minutes: ${env.ACCESS_TOKEN_EXPIRE_MINUTES}
     public-key: ${env.PUBLIC_KEY}
     private-key: ${env.PRIVATE_KEY}
